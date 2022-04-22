@@ -1,0 +1,564 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --black: hsl(0, 0, 0);
+    --charcole1: hsl(0, 0%, 36%);
+    --lightgrey: hsl(0, 6%, 93%);
+    --lightblue: #8ECAE6;
+    --midblue: #219EBC;
+    --charcole2: #252934;
+    --darkblue: #023047;
+    --charcole3: #1b242f;
+    --beige: #ffedcf;
+    --hotpink: #e31b6d;
+    --honeyyellow: #FFB703;
+    --burntorange: #FB8500;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 12pt;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 8vh;
+}
+
+h3 {
+    font-weight: 800;
+    color: var(--charcole1);
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--charcole1);
+}
+
+/* change text color to hotpink */
+em {
+    color: var(--hotpink);
+    font-style: normal;
+}
+
+
+/* Header & Navigation ///////////////////////////////////////////////////////////////////////////////////*/
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+#headerwrap {
+    height: 100vh;
+    background-image: url("../images/clonebg.png");
+    background-color: var(--charcole2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro {
+    width: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#intro h1 {
+    color: var(--white);
+}
+
+#introbutton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: .4vh solid var(--white);
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+#introbutton:hover {
+    border: .4vh solid var(--white);
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    animation-name: intro;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+#introbutton:hover .fa-arrow-right{
+    padding: 0 0 0 2vh;
+    transform: rotate(90deg);
+    transition:1s;
+}
+
+@keyframes intro{
+    100%{background-color: var(--midblue);}
+}
+
+
+nav {
+    text-align: center;
+    width: 100%;
+    /* Important! */
+    position: sticky;
+    top: 0vh;
+    z-index: 5;
+}
+
+nav ul {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5vh;
+    background-color: var(--charcole3);
+    border-bottom: .7vh solid var(--midblue);
+}
+
+.navlink {
+    display: flex;
+    flex-direction: row;
+    font-family: raleway, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 0 3vh;
+}
+
+a:link {
+    font-weight: 300;
+    color: var(--white);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--lightblue);
+    text-decoration: none;
+}
+
+a:focus {
+    color: var(--hotpink);
+    text-decoration: none;
+}
+
+/* About Me //////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#about h1 {
+    font-weight: 700;
+    color: var(--charcole1);
+    display: flex;
+    justify-content: center;
+    padding: 15vh 0;
+}
+
+.underline {
+    width: 10vh;
+    height: 2vh;
+    background-color: var(--charcole1);
+    display: flex;
+}
+
+#aboutlist ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#aboutlist ul li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 30vh;
+}
+
+#aboutlist ul li h3 {
+    padding: 3vh 0;
+}
+
+#aboutme {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20vh 0;
+}
+
+#aboutprofile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0px 10vh 0;
+}
+
+#aboutprofile p {
+    width: 60vh;
+    text-align: center;
+}
+
+
+#aboutprofile h3 {
+    padding: 10px;
+}
+
+#aboutprofile img {
+    width: 350px;
+    height: 100%;
+    padding-left: 5px;
+}
+
+#aboutskills img {
+    width: 450px;
+    height: 300px;
+    padding: 0 60px;
+}
+
+
+/* Icons & Hex Borders////////////////////////////////////////////////////////////////////////////////////*/
+
+.hex {
+    display: flex;
+    position: relative;
+    width: 120px;
+    height: 133px;
+    background-color: var(--midblue);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(29deg);
+}
+
+#selfportrait {
+    display: flex;
+    position: relative;
+    width: 271px;
+    height: 300px;
+    background-color: var(--midblue);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(29deg);
+    background-color: var(--black);
+}
+
+.hex i {
+    position: relative;
+    bottom: 20px;
+    left: -30px;
+}
+
+.fa-solid {
+    color: var(--midblue);
+}
+
+.fa-gauge-simple-high {
+    background-color: var(--white);
+}
+
+.fa-mobile-screen-button {
+    color: var(--white);
+    padding-top: 53px;
+    padding-left: 40px;
+    transform: rotate(-29deg);
+}
+
+.fa-lightbulb {
+    color: var(--white);
+    padding-top: 55px;
+    padding-left: 40px;
+    transform: rotate(-29deg);
+}
+
+.fa-rocket {
+    color: var(--white);
+    padding-top: 56px;
+    padding-left: 25px;
+    transform: rotate(-15deg);
+}
+
+/* Intro Button Arrow*/
+.fa-arrow-right{
+    color: white;
+    padding: 0 0 0 2vh;
+    animation-name: arrow;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+/* Bar Chart Elements & Animations /////////////////////////////////////////////////////////////////////*/
+.barwrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/*Background bar */
+.bar {
+    width: 80vh;
+    height: 5vh;
+    background-color: var(--lightgrey);
+    margin: 1vh 0;
+    z-index: 1;
+}
+
+.barlabel {
+    height: 5vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightblue);
+    z-index: 2;
+}
+
+.barlabel h3 {
+    color: var(--white);
+}
+
+/*Formating for bars*/
+.skilllvl {
+    position: relative;
+    top: -10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: .5vh;
+    z-index: 2;
+}
+
+/*Animated bar*/
+.foreground {
+    position: relative;
+    top: -5vh;
+    left: 20vh;
+    height: 5vh;
+    background-color: var(--midblue);
+    z-index: 4;
+}
+
+/*CSS 90*/
+#foreground1 {
+    max-width: 45vh;
+    animation-name: barfill1;
+    animation-duration: 2s;
+}
+
+/*HTML 90*/
+#foreground2 {
+    max-width: 45vh;
+    animation-name: barfill1;
+    animation-duration: 2s;
+}
+
+/*React 80*/
+#foreground3 {
+    max-width: 40vh;
+    animation-name: barfill2;
+    animation-duration: 2s;
+}
+
+/*Javascript 80*/
+#foreground4 {
+    max-width: 40vh;
+    animation-name: barfill2;
+    animation-duration: 2s;
+}
+
+/*Angular 50*/
+#foreground5 {
+    max-width: 25vh;
+    animation-name: barfill3;
+    animation-duration: 2s;
+}
+
+/*Node JS 65*/
+#foreground6 {
+    max-width: 33vh;
+    animation-name: barfill4;
+    animation-duration: 2s;
+}
+
+/*Ruby Rails 65*/
+#foreground7 {
+    max-width: 33vh;
+    animation-name: barfill4;
+    animation-duration: 2s;
+}
+
+/*Ui Design 50*/
+#foreground8 {
+    max-width: 25vh;
+    animation-name: barfill3;
+    animation-duration: 2s;
+}
+
+/*Photoshop 60*/
+#foreground9 {
+    max-width: 30vh;
+    animation-name: barfill5;
+    animation-duration: 2s;
+}
+
+/*Sketch 50*/
+#foreground10 {
+    max-width: 25vh;
+    animation-name: barfill3;
+    animation-duration: 2s;
+}
+
+@keyframes barfill1 {
+    from {
+        width: 0vh;
+    }
+
+    to {
+        width: 45vh;
+    }
+}
+
+@keyframes barfill2 {
+    from {
+        width: 0vh;
+    }
+
+    to {
+        width: 40vh;
+    }
+}
+
+@keyframes barfill3 {
+    from {
+        width: 0vh;
+    }
+
+    to {
+        width: 25vh;
+    }
+}
+
+@keyframes barfill4 {
+    from {
+        width: 0vh;
+    }
+
+    to {
+        width: 33vh;
+    }
+}
+
+@keyframes barfill5 {
+    from {
+        width: 0vh;
+    }
+
+    to {
+        width: 30vh;
+    }
+}
+
+
+.sociallinks:hover{
+    animation-name: social;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+
+}
+
+@keyframes social {
+    100%{background-color: var(--midblue);
+}
+    
+}
+
+/* Footer ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#footerwrap {
+    background-color: var(--charcole3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10vh 0;
+}
+
+.pinksquare {
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--hotpink);
+    position: relative;
+    top: -5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-angles-up {
+    color: var(--white);
+    background-color: var(--hotpink);
+}
+
+#socialwrap {}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    padding: 3vh 0 0 0;
+}
+
+.sociallinks {
+    width: 10vh;
+    height: 10vh;
+    color: var(--white);
+    background-color: var(--charcole2);
+    border: 2vh solid var(--charcole3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#namewrap h3 {
+    padding-top: 5vh;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#aboutskills {
+    padding: 0 10vh;
+}
+
